@@ -1,0 +1,82 @@
+<html xmlns:width="http://www.w3.org/1999/xhtml">
+<head>
+    
+    
+    <link href="stylesheets/main.css" rel="stylesheet" type="text/css" >
+    
+    </head>
+<body>
+<div class="footer">
+    
+
+
+
+
+</div>
+<form method="get" action="">
+    <input type="text" placeholder="Search" name="searchtext">
+    <button type="submit" >search</button>
+<select>
+<option value="price">
+Lowest to Highest Price
+</option>
+<option value="-price">
+Highest to Lowest Price
+</option>
+<option value="Relevance">
+Relevance
+</option>
+
+</select>
+
+    <select name="option">
+
+        <option value="select" selected="true">select department</option>
+        {% for pizza in pizzas %}
+<option value="{{pizza}}">{{pizza}}</option>";
+
+
+
+        {% endfor %}
+
+
+
+
+    </select>
+    </form>
+<div class="main-results">
+
+    {% for item in items %}
+    <div class="item-c">
+    <div class="item-title">
+    
+    {{item.ItemAttributes.Title}}
+    
+    
+    </div>
+
+    <div class="item-image">
+        <img src="{{item.MediumImage.URL}}" width="100" height="100">
+    </div>
+
+
+<div class="item-price">
+    {{item.OfferSummary.LowestNewPrice.FormattedPrice}}
+
+
+
+</div>
+<div class="item-externallink">
+<a href="{{item.DetailPageURL}}">
+    Goto Store>>
+    
+    </a>
+  </div>
+    </div>
+
+    {% endfor %}
+    
+    
+    </div>
+
+</body></html>
