@@ -1,6 +1,0 @@
-{
-    "require": {
-        "exeu/apai-io": "dev-master",
-        "twig/twig": "~1.0"
-    }
-}
